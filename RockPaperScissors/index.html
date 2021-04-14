@@ -16,25 +16,27 @@
             return choose;
         }
         function match(playerSelection, computerSelection) {
-            playerSelection = input("Select: Rock, Paper or Scissors").toLowerCase();
+            let playerChooice = playerSelection.toLowerCase();
             computerSelection = computerPlay();
             let winner;
-            if (playerSelection == 'rock' && computerSelection == 'scissors') {
+            if (playerChooice == 'rock' && computerSelection == 'scissors') {
                 winner = 'You won!';
-            } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+            } else if (playerChooice == 'scissors' && computerSelection == 'rock') {
                 winner = 'The computers won!';
-            } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+            } else if (playerChooice == 'paper' && computerSelection == 'rock') {
                 winner = 'you won!';
-            } else if (playerSelection == 'rock' && computerSelection == 'paper') {
+            } else if (playerChooice == 'rock' && computerSelection == 'paper') {
                 winner = 'The computers won!';
-            } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+            } else if (playerChooice == 'scissors' && computerSelection == 'paper') {
                 winner = 'You won!';
-            } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+            } else if (playerChooice == 'paper' && computerSelection == 'scissors') {
                 winner = 'The computers won!';
-            } else if (playerSelection === computerSelection) {
+            } else if (playerChooice === computerSelection) {
                 winner = 'toe'
             }
+            return winner;
         }
+        
     </script>
 </body>
 </html>
