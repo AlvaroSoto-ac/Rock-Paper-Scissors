@@ -12,10 +12,10 @@
         function computerPlay() {
             let options = ['rock','paper','scissors'];
             let random = Math.floor(Math.random() * options.length);
-            let choose = options.length; 
-            return choose;
+            let result = options[random];
+            return result;
         }
-        function match(playerSelection, computerSelection) {
+        function playRound(playerSelection, computerSelection) {
             let playerChooice = playerSelection.toLowerCase();
             computerSelection = computerPlay();
             let winner;
@@ -36,6 +36,27 @@
             }
             return winner;
         }
+        function game(){      
+            let scorePlayer = 0;
+            let scoreCompu = 0;
+            let winner = '';
+            for (let i=0 ; i<5 ; i++) {
+                let selectPlayer = prompt('Your turn (rock, paper, scissors):');
+                playRound(selectPlayer,computerPlay());
+                if (playRound(selectPlayer,computerPlay()) == 'You won!') {
+                    scorePlayer = scorePlayer + 1;
+                } else if (playRound(selectPlayer,computerPlay()) == 'The computers won!'){
+                    scoreCompu = scoreCompu + 1;
+                }
+            }
+            if (scorePlayer > scoreCompu) {
+                winner = 'You won by: ' + scorePlayer + ' vs ' + scoreCompu
+            } else {
+                winner = 'You lost by: ' + scorePlayer + ' vs ' + scoreCompu+ ' the Compu won!';
+            }
+            return winner;
+        }
+
         
     </script>
 </body>
