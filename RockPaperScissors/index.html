@@ -40,10 +40,9 @@
             let scorePlayer = 0;
             let scoreCompu = 0;
             let toe = 0;
-            let winner = '';
+            let winner;
             for (let i=0 ; i<5 ; i++) {
                 let playerSelection = prompt('Write your chooice ("rock","paper","scissors"): ');
-                
                 playRound(playerSelection,computerPlay());
                 if (playRound(playerSelection,computerPlay()) == 'You won!') {
                     scorePlayer = scorePlayer + 1;
@@ -55,8 +54,7 @@
                 console.log('You: ' + playerSelection + ' vs ' + 'Computer: ' + computerPlay());
             }
             if (scorePlayer > scoreCompu) {
-                winner = `You won by: ${scorePlayer} vs ${scoreCompu} --> Congrats!!\n You: ${scorePlayer}  ||  Computer: ${scoreCompu}  ||  Toe: ${toe}`;
-                
+                winner = `You won by: ${scorePlayer} vs ${scoreCompu} --> Congrats!!\n You: ${scorePlayer}  ||  Computer: ${scoreCompu}  ||  Toe: ${toe}`;    
             } else if (scorePlayer < scoreCompu) {
                 winner = `You lost by: ${scorePlayer} vs ${scoreCompu} --> Try again!!\n You: ${scorePlayer}  ||  Computer: ${scoreCompu}  ||  Toe: ${toe}`;
             } else {
@@ -64,8 +62,6 @@
             }
             return winner;
         }
-
-        
     </script>
 </body>
 </html>
